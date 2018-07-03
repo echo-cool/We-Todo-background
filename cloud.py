@@ -24,7 +24,7 @@ def before_todo_save(todo):
     author = todo.get('author')
     if author:
         acl = ACL()
-        acl.set_public_read_access(True)
+        acl.set_public_read_access(False)
         acl.set_read_access(author.id, True)
         acl.set_write_access(author.id, True)
         todo.set_acl(acl)

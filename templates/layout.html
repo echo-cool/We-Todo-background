@@ -26,7 +26,7 @@
           <ul class="nav navbar-nav">
             {% set active = active|default('todos') -%}
             <li {% if active == 'todos' %}class="active"{% endif %}><a href="{{ url_for('todos.show') }}">Todo List</a></li>
-            <li {% if active == 'help' %}class="active"{% endif %}><a href="{{ url_for('help') }}">说明</a></li>
+            
           </ul>
           <ul class="nav navbar-nav navbar-right">
             {% if g.user %}
@@ -44,8 +44,7 @@
       {% endblock %}
       <footer class="page-footer">
         <hr>
-        <p class="text-muted">Powered by <a href="https://leancloud.cn">LeanCloud</a> | Runs on <a href="https://leancloud.cn/docs/leanengine_overview.html">LeanEngine</a></p>
-      </footer>
+        </footer>
     </div>
     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.slim.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>注册 - Flask Todo Demo</title>
+    <title>注册 - Todo</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/app.css') }}">
     <meta name="viewport" content="width:device-width,initial-scale=1.0,user-scalable=no">
@@ -23,20 +23,11 @@
                   {% endfor %}
                 {% endif %}
               {% endwith %}
-              <form action="{{ url_for('users.register') }}" method="post">
-                <div class="form-group">
-                  <input class="form-control" placeholder="用户名" type="text" name="username">
-                </div>
-                <div class="form-group">
-                  <input class="form-control" placeholder="密码" type="password" name="password">
-                </div>
-                <input class="btn btn-default" type="submit" name="" value="登录">
-              </form>
-            </div>
+              <h3>注册账号请打开我们的微信小程序，会自动注册</h3> 
+      <img src="http://baobaiqiang.oss-cn-beijing.aliyuncs.com/gh_92cb296c0f0a_258.jpg"  alt="小程序二维码" />
             <div class="panel-footer">已经有了账户？<a href="{{ url_for('users.login') }}">去登录</a></div>
           </div>
-          <p class="text-muted">Powered by <a href="https://leancloud.cn">LeanCloud</a> | Runs on <a href="https://leancloud.cn/docs/leanengine_overview.html">LeanEngine</a></p>
-        </div>
+          </div>
       </div>
     </div>
   </body>

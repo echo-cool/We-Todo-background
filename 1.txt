@@ -1,0 +1,3 @@
+#	Result	Protocol	Host	URL	Body	Caching	Content-Type	Process	Comments	Custom	
+9035	200	HTTP	www.baihecard.com:8870	/wxPay/reqCardNo	471		application/json; charset=utf-8	wechat:7508			
+

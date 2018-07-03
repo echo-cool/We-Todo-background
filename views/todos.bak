@@ -13,8 +13,6 @@ from flask import flash
 
 class Todo(Object):
     pass
-class Done(Object):
-    pass
 
 todos_view = Blueprint('todos', __name__)
 
@@ -26,7 +24,7 @@ def show():
     if k == None :
        k = False
     else:
-       k  = True
+       k  = True  
     try:
         done = Query(Todo).add_descending('createdAt').equal_to('done', True).find()
         todos = Query(Todo).add_descending('createdAt').equal_to('done', k).find()
@@ -45,18 +43,14 @@ def show():
 def add():
     content = request.form['content']
     todo = Todo()
-    done = Done()
     todo.set('content', content)
     todo.set('done', False)
-    done.set('content', content)
-    done.set('done', False)
+    todo.set('done', False)
     user = User.get_current()
     if user:
         todo.set('user', user)  # 关联 todo 的作者
-        done.set('user', user)
     try:
         todo.save()
-        done.save()
     except LeanCloudError as e:
         flash(e.error)
     return redirect(url_for('todos.show'))
